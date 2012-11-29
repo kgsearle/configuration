@@ -84,6 +84,11 @@ if has("autocmd")
     autocmd FileType php noremap <C-M> :w!<CR>:!/usr/bin/php %<CR>
     " PHP parser check (CTRL-L)
     autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
+    " phpDocumentor plugin, CTRL-P on a class, function or var will insert
+    " the appropriate phpDoc template
+    autocmd FileType php inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+    autocmd FileType php nnoremap <C-P> :call PhpDocSingle()<CR>
+    autocmd FileType php vnoremap <C-P> :call PhpDocSingle()<CR>
   augroup END
 endif
 
