@@ -48,7 +48,7 @@ endif
 if &term=="xterm-256color"
   set t_Co=256
   set background=dark
-  colors moria
+  colors jellybeans
 endif
 
 ""
@@ -98,3 +98,18 @@ endif
 if has("autocmd")
   filetype plugin indent on
 endif
+
+""
+" Informative status line
+""
+set statusline=%t       "tail of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
