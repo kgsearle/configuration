@@ -30,8 +30,8 @@ set ruler
 " Autoindenting
 set ai
 " Mixed tabs and spaces indentation
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 
 ""
 " Syntax highlighting if supported
