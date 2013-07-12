@@ -1,0 +1,12 @@
+[user]
+	name = Kevin Searle
+	email = contact@kevinsearle.com
+[core]
+	editor = vim
+	fileMode = false
+[merge]
+	tool = vimdiff
+[credential]
+	helper = cache --timeout=3600
+[color]
+	ui = true
