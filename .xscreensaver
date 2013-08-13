@@ -1,0 +1,15 @@
+grabDesktopImages: False
+grabVideoFrames: False
+
+chooseRandomImages: True
+imageDirectory: /home/kevin/Pictures/Backgrounds
+
+mode: random
+selected: -1
+
+font:	*-medium-r-*-140-*-m-*
+textMode: url
+textLiteral: ubik
+textFile:
+textProgram: fortune -s
+textURL: http://feeds.boingboing.net/boingboing/iBag
