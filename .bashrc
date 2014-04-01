@@ -17,12 +17,6 @@ fi
 
 # ALIASES
 alias hist='history | grep $1' # Searches history
-# Hades-specific
-alias sb="cd /var/www/sandbox/kevin/"
-alias fnc="cd /var/www/sandbox/kevin/www.fncash.com/"
-alias cart="cd /var/www/sandbox/kevin/cart.fleshlight.com/"
-alias sfnc="stage www.fncash.com"
-alias dfnc="deploy www.fncash.com"
 
 # GLOBAL
 if [ -f /etc/bashrc ]; then
