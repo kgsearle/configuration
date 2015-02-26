@@ -16,6 +16,7 @@ fi
 
 # ALIASES
 alias hist='history | grep $1' # Searches history
+alias lsd='ls -l | egrep "^d"' # List directories
 
 # GLOBAL
 if [ -f /etc/bashrc ]; then
