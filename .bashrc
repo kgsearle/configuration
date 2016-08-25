@@ -19,6 +19,10 @@ fi
 # ALIASES
 alias hist='history | grep $1' # Searches history
 alias lsd='ls -l | egrep "^d"' # List directories
+# find shortcuts
+alias phpfind="find -type f -name '*.php' -print | xargs grep"
+alias jsfind="find -type f -name '*.js' -print | xargs grep"
+alias cssfind="find -type f -name '*.css' -print | xargs grep"
 
 # GLOBAL
 if [ -f /etc/bashrc ]; then
