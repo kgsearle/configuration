@@ -24,3 +24,6 @@ alias lsd='ls -l | egrep "^d"' # List directories
 if [ -f /etc/bashrc ]; then
   /etc/bashrc
 fi
+
+# OSX voice
+#say -v Karen bash r.c. loaded
