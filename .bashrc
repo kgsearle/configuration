@@ -2,6 +2,8 @@
 
 # EXPORTS
 export PATH=$PATH:$HOME/bin:$HOME/pear/bin
+# PHP 7 on OSX
+#export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 export SSH_ENV=$HOME/.ssh/environment
 export PS1="\[\033[0;31m\][\\u@\\h:\\w]\[\033[00m\] "
 export EDITOR=/usr/bin/vim
