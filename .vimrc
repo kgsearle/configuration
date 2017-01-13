@@ -43,6 +43,11 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 ""
+" Pathogen support
+""
+execute pathogen#infect()
+
+""
 " 256-color mode and color settings
 ""
 if &term=="xterm-256color"
