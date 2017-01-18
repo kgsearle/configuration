@@ -8,3 +8,7 @@ fi
 if [ -f ~/.dash ]; then
         . ~/.dash
 fi
+
+function homestead() {
+    ( cd ~/src/Homestead && vagrant $* )
+}
