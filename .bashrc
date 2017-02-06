@@ -30,5 +30,3 @@ if [ -f /etc/bashrc ]; then
   /etc/bashrc
 fi
 
-# OSX voice
-#say -v Karen bash r.c. loaded
