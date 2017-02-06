@@ -9,6 +9,7 @@ export PS1="\[\033[0;31m\][\\u@\\h:\\w]\[\033[00m\] "
 export EDITOR=/usr/bin/vim
 export HISTFILESIZE=3000 # history will save 30000 commands
 export HISTCONTROL=ignoredups # don't put duplicate lines in history
+export NVM_DIR="/Users/kevins/.nvm"
 # Set 256 color terminal if possible
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
 	export TERM='xterm-256color'
@@ -30,3 +31,5 @@ if [ -f /etc/bashrc ]; then
   /etc/bashrc
 fi
 
+# Load NVM
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
