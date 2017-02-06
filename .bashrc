@@ -1,7 +1,7 @@
 # .bashrc
 
 # EXPORTS
-export PATH=$PATH:$HOME/bin:$HOME/pear/bin
+export PATH=$HOME/bin:$HOME/.composer/vendor/bin:$HOME/pear/bin:$PATH
 # PHP 7 on OSX
 #export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 export SSH_ENV=$HOME/.ssh/environment
