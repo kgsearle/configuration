@@ -6,13 +6,6 @@ case $- in
       *) return;;
 esac
 
-# On OSX?
-if [ ${HOME:0:6}="/Users" ]; then 
-    OSX=1
-else
-    OSX=0
-fi
-
 # GLOBAL
 if [ -r /etc/bashrc ]; then
   source /etc/bashrc
@@ -21,11 +14,11 @@ fi
 # EXPORTS
 export PATH=$HOME/bin:$HOME/.composer/vendor/bin:$HOME/pear/bin:$PATH
 # PHP 7 on OSX
-if [ $OSX=0 ]; then 
+if [ "$OSTYPE" == "darwin" ]; then 
     export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 fi
 export SSH_ENV=$HOME/.ssh/environment
-#if [ $OSX=0 ]; then
+#if [ "$OSTYPE" != "darwin" ]; then
     export PS1="\[\033[0;31m\][\\u@\\h:\\w]\[\033[00m\] "
 #fi
 export EDITOR=/usr/bin/vim
@@ -46,7 +39,7 @@ alias phpfind="find -type f -name '*.php' -print | xargs grep"
 alias jsfind="find -type f -name '*.js' -print | xargs grep"
 alias cssfind="find -type f -name '*.css' -print | xargs grep"
 alias mongostart="mongod --config $MONGODB_CONFIG"
-if [ $OSX=1 ]; then
+if [ "$OSTYPE" == "darwin" ]; then
     alias mountdev="sshfs scsdev:/home/ksearle/scs $HOME/scsdev"
 fi
 
