@@ -24,8 +24,13 @@ fi
 export SSH_ENV=$HOME/.ssh/environment
 
 ## Command line history
-export HISTFILESIZE=3000 # history will save 30000 commands
-export HISTCONTROL=ignoredups # don't put duplicate lines in history
+# Ignore duplicate lines and lines starting with spaces
+export HISTCONTROL=ignoreboth
+# Append to history file
+shopt -s histappend
+# history will save 30000 commands
+export HISTSIZE=2000
+export HISTFILESIZE=3000
 
 ## Terminal
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
