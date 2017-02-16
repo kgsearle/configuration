@@ -16,7 +16,7 @@ fi
 ## Path
 export PATH=$HOME/bin:$HOME/.composer/vendor/bin:$HOME/pear/bin:$PATH
 # PHP 7 on OSX
-if [ "$OSTYPE" == "darwin" ]; then 
+if [ "$OSTYPE" == "darwin16" ]; then 
     export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 fi
 
@@ -52,7 +52,7 @@ case "$TERM" in
 esac
 
 ## Command prompt
-#if [ "$OSTYPE" != "darwin" ]; then
+#if [ "$OSTYPE" != "darwin16" ]; then
 #    export PS1="\[\033[0;31m\][\\u@\\h:\\w]\[\033[00m\] "
 #fi
 if [ "$color_prompt" = yes ]; then
@@ -87,6 +87,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # Enable color ls if available
 if [ -e "~/.dircolors" ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+elif [ -e "~/.dir_colors" ]; then 
+    test -r ~/.dir_colors && eval "$(dircolors -b ~/.dir_colors)" || eval "$(dircolors -b)"
 fi
 # Moved to separate file
 if [ -f ~/.bash_aliases ]; then

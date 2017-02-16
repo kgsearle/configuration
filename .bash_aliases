@@ -1,5 +1,7 @@
 if [ "$OSTYPE" == "linux-gnu" ]; then
     alias ls='ls --color=auto'
+elif [ "$OSTYPE" == "darwin16" ]; then 
+    alias ls="ls -G"
 fi
 alias ll='ls -alF'
 alias la='ls -A'
@@ -20,7 +22,7 @@ alias hist='history | grep $1' # Searches history
 
 alias mongostart="mongod --config $MONGODB_CONFIG"
 
-if [ "$OSTYPE" == "darwin" ]; then
+if [ "$OSTYPE" == "darwin16" ]; then
     alias mountdev="sshfs scsdev:/home/ksearle/scs $HOME/scsdev"
 fi
 
