@@ -84,6 +84,12 @@ export MONGODB_CONFIG="/usr/local/etc/mongod.conf"
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 ## Aliases
+# Enable color ls if available
+test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+# Moved to separate file
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 alias hist='history | grep $1' # Searches history
 alias lsd='ls -l | egrep "^d"' # List only directories
 alias phpfind="find -type f -name '*.php' -print | xargs grep"
