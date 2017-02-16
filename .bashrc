@@ -1,5 +1,11 @@
 # .bashrc
 
+## If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 # On OSX?
 if [ ${HOME:0:6}="/Users" ]; then 
     OSX=1
