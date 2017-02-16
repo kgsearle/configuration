@@ -1,4 +1,6 @@
-alias ls='ls --color=auto'
+if [ "$OSTYPE" == "linux-gnu" ]; then
+    alias ls='ls --color=auto'
+fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
