@@ -85,7 +85,9 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 ## Aliases
 # Enable color ls if available
-test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+if [ -e "~/.dircolors" ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
 # Moved to separate file
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
