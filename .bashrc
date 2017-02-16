@@ -33,7 +33,7 @@ export HISTSIZE=2000
 export HISTFILESIZE=3000
 
 ## Identifying chroot in Debian-based Linux
-if [ "$OSTYPE" == "linux-gnu"] && [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+if [ "$OSTYPE" == "linux-gnu" ] && [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
