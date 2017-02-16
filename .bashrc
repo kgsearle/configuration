@@ -78,6 +78,10 @@ if [ -e "$NVM_DIR/nvm.sh" ]; then
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 fi
 export MONGODB_CONFIG="/usr/local/etc/mongod.conf"
+# Make less friendlier for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+# Colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 ## Aliases
 alias hist='history | grep $1' # Searches history
