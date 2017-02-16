@@ -92,15 +92,6 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-alias hist='history | grep $1' # Searches history
-alias lsd='ls -l | egrep "^d"' # List only directories
-alias phpfind="find -type f -name '*.php' -print | xargs grep"
-alias jsfind="find -type f -name '*.js' -print | xargs grep"
-alias cssfind="find -type f -name '*.css' -print | xargs grep"
-alias mongostart="mongod --config $MONGODB_CONFIG"
-if [ "$OSTYPE" == "darwin" ]; then
-    alias mountdev="sshfs scsdev:/home/ksearle/scs $HOME/scsdev"
-fi
 
 # Enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
