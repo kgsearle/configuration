@@ -6,9 +6,11 @@ case $- in
       *) return;;
 esac
 
-# GLOBAL
+## Global bashrc
 if [ -r /etc/bashrc ]; then
   source /etc/bashrc
+elif [ -r /etc/bash.bashrc ]; then
+  source /etc/bash.bashrc
 fi
 
 # EXPORTS
