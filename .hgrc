@@ -1,0 +1,11 @@
+# example config (see "hg help config" for more info)
+
+[ui]
+username = Kevin Searle <kevins@supercheapsigns.com>
+
+[extensions]
+# uncomment these lines to enable some popular extensions
+# (see "hg help extensions" for more info)
+# pager =
+# progress =
+# color =
