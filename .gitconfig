@@ -1,11 +1,16 @@
 [user]
 	name = Kevin Searle
 	email = contact@kevinsearle.com
+[push]
+	default = simple
 [core]
 	editor = vim
 	fileMode = false
+	autocrlf = input
 [merge]
-	tool = vimdiff
+	tool = meld
+[mergetool "meld"]
+	path = /usr/bin/meld
 [credential]
 	helper = cache --timeout=3600
 [color]
