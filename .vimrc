@@ -3,9 +3,9 @@
 ""
 " Character encoding
 ""
-if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
-   set fileencodings=utf-8,latin1
-endif
+"if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
+"   set fileencodings=utf-8,latin1
+"endif
 
 ""
 " General settings
@@ -13,7 +13,7 @@ endif
 " Use Vim (vs Vi) defaults
 set nocompatible	
 " allow backspacing over everything in insert mode
-set bs=indent,eol,start
+"set bs=indent,eol,start
 " keep backup file
 "set backup		
 " read/write a .viminfo file, don't store more
