@@ -14,11 +14,7 @@ elif [ -r /etc/bash.bashrc ]; then
 fi
 
 ## Path
-export PATH=$HOME/bin:$HOME/.composer/vendor/bin:$HOME/pear/bin:$PATH
-# PHP 7 on OSX
-if [ "$OSTYPE" == "darwin16" ]; then 
-    export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
-fi
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 ## SSH settings
 export SSH_ENV=$HOME/.ssh/environment
@@ -52,9 +48,6 @@ case "$TERM" in
 esac
 
 ## Command prompt
-#if [ "$OSTYPE" != "darwin16" ]; then
-#    export PS1="\[\033[0;31m\][\\u@\\h:\\w]\[\033[00m\] "
-#fi
 if [ "$color_prompt" = yes ]; then
     parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -87,12 +80,6 @@ export MONGODB_CONFIG="/usr/local/etc/mongod.conf"
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 ## Aliases
-# Enable color ls if available
-if [ -e "~/.dircolors" ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-elif [ -e "~/.dir_colors" ]; then 
-    test -r ~/.dir_colors && eval "$(dircolors -b ~/.dir_colors)" || eval "$(dircolors -b)"
-fi
 # Moved to separate file
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -108,3 +95,18 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+date | cowsay -f eyes
+
+# Uses project's composer container
+# @todo Should probably detect if docker & container exists, otherwise use normal path
+function composer() {
+    tty=
+    tty -s && tty=--tty
+    docker run $tty --interactive --rm --volume $(pwd):/app --user $(id -u):$(id -g) --volume ~/.composer:/tmp composer "$@"
+}
+
+function clone() {
+	git clone git@github.com:"$1"/"$2".git
+}
+
