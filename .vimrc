@@ -29,9 +29,10 @@ set ruler
 ""
 " Autoindenting
 set ai
-" Mixed tabs and spaces indentation
-set shiftwidth=4
-set softtabstop=4
+set expandtab
+set shiftwidth=2
+set tabstop=2
+"set softtabstop=4
 
 ""
 " Syntax highlighting if supported
@@ -53,17 +54,18 @@ execute pathogen#infect()
 if &term=="xterm-256color"
   set t_Co=256
   set background=dark
-  colors jellybeans
+  colors NeoSolarized
 endif
 
 ""
 " Default xterm settings
 ""
 if &term=="xterm"
-     set t_Co=8
-     set t_Sb=[4%dm
-     set t_Sf=[3%dm
+  set t_Co=8
+  set t_Sb=[4%dm
+  set t_Sf=[3%dm
 endif
+
 
 ""
 " Basic auto commands
@@ -131,3 +133,7 @@ map <F7> <Esc>:DisablePHPFolds<Cr>
 ""
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
+packloadall
+silent! helptags ALL
+
