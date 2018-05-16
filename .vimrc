@@ -54,7 +54,7 @@ execute pathogen#infect()
 if &term=="xterm-256color"
   set t_Co=256
   set background=dark
-  colors NeoSolarized
+  colorscheme NeoSolarized
 endif
 
 ""
