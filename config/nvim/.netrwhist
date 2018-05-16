@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='~/.vim'
+let g:netrw_dirhist_2='~/.vim/colors'
+let g:netrw_dirhist_3='~/.vim'
+let g:netrw_dirhist_4='~/src/configuration/.vim/colors'
+let g:netrw_dirhist_5='~/.config/nvim'
